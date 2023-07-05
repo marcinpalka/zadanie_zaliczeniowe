@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+}
+
+@keyframes modal-in {
+    from {
+      top: -1000%;
+    }
+  
+    to {
+      top: 50%;
+    }
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    &.overlay::before {
+        content: '';
+        position: absolute;
+        display: block;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.75);
+    }
+}
+
+.modal {
+   position: fixed;
+   left: 50%;
+   top: 50%;
+   background-color: red;
+   max-width: 600px;
+   padding: 50px;
+   transform: translate(-50%, -50%);
+   animation-name: modal-in;
+   animation-duration: 1s;
+}
+
+.hide {
+    display: none;
+}
